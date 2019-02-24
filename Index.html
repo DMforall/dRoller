@@ -19,8 +19,7 @@
 			roll = roll.slice(0, 17);
   		  	result += roll;
 			//playSound();
-			alert(1);
-			if ((i+1) % 4 == 0 ) result += "\n";
+			if ((i+1) % 4 == 0 ) result += "\n"; \\max four per line
 		}
 		result = result.slice(0, -2) + "\n" + "Total: " + sum;
 	 	output.innerHTML = result; 
