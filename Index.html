@@ -8,6 +8,12 @@
    	var outDice = document.getElementById("showDice");
 	var output = document.getElementById("diceRolls");
 	var slid = Number(document.getElementById("numDice").value);
+	function loadSound () {
+        	createjs.Sound.registerSound("http://ll.50webs.com/diceroll.mp3", "myroll");
+   	}
+   	function playSound () {
+       	 	createjs.Sound.play("myroll");
+	}
 	function roll(d) {
 		var roll, sum = 0;
      		var result = "";
@@ -18,7 +24,7 @@
 			roll = (i+1)+": d"+d+"= "+ roll + "                         ";
 			roll = roll.slice(0, 17);
   		  	result += roll;
-		//	createjs.Sound.play(soundID);
+			playSound();
 			if ((i+1) % 4 == 0 ) result += "\n";
 		}
 		result = result.slice(0, -2) + "\n" + "Total: " + sum;
@@ -37,23 +43,9 @@
    <h1>dRoller</h1>
   	<input id="numDice" type="range" min="1" max="20" value="1" onchange="changeMe">
 	<h2 id="showDice">Dice to roll: 1</h2>
-
 	<script type="text/javascript">
-	var slid = Number(document.getElementById("numDice").value);
-
-	
-	
-	var soundID = "myroll";
-  	function loadSound () {
-			//alert(0);
-        createjs.Sound.registerSound("http://ll.50webs.com/diceroll.mp3", soundID);
-   }
-   function playSound () {
-			//alert(1);
-        createjs.Sound.play(soundID);
-	}
+  	
 	</script>
-
 	<br>
 	<button style="font-size:200%" onclick="alert(4)">d4</button> 
 	<button style="font-size:200%" onclick="roll(6)">d6</button> 
