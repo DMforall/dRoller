@@ -30,6 +30,12 @@
 		slid = Number(document.getElementById("numDice").value);
 	}
 	document.getElementById("numDice").addEventListener("input", changeMe);
+	function loadSound () {
+        	createjs.Sound.registerSound("http://ll.50webs.com/diceroll.mp3", "myroll");
+   	}
+   	function playSound () {
+       	 	createjs.Sound.play("myroll");
+	}
 	</script>
 	
 </head>
