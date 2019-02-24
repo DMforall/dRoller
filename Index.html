@@ -2,22 +2,16 @@
 <head>
   	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' charset="UTF-8"/>
   	<link rel="stylesheet" href="style.css" />
-	<style>
-	</style>
  	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 	<script type="text/javascript">
-	//document.addEventListener("touchmove",function(event){event.preventDefault();});
-
 	var slider = document.getElementById("numDice");
    	var outDice = document.getElementById("showDice");
-
+	var output = document.getElementById("diceRolls");
+	var slid = Number(document.getElementById("numDice").value);
 	function roll(d) {
-		alert(d);
 		var roll, sum = 0;
-		//var rolls = [slid];
      		var result = "";
 		var i;
-		var output = document.getElementById("diceRolls");
 		for (i = 0; i < slid; i++) { 
 		 	roll = Math.floor(Math.random()*d+1);
 			sum += roll;
