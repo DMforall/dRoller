@@ -9,13 +9,12 @@
 	//document.addEventListener("touchmove",function(event){event.preventDefault();});
 
 	var slider = document.getElementById("numDice");
-   var outDice = document.getElementById("showDice");
+   	var outDice = document.getElementById("showDice");
 
 	function roll(d) {
 		var roll, sum = 0;
-
 		//var rolls = [slid];
-     	var result = "";
+     		var result = "";
 		var i;
 		for (i = 0; i < slid; i++) { 
 		 	roll = Math.floor(Math.random()*d+1);
@@ -23,7 +22,7 @@
 			roll = (i+1)+": d"+d+"= "+ roll + "                         ";
 			roll = roll.slice(0, 17);
   		  	result += roll;
-			createjs.Sound.play(soundID);
+		//	createjs.Sound.play(soundID);
 			if ((i+1) % 4 == 0 ) result += "\n";
 		}
 		result = result.slice(0, -2) + "\n" + "Total: " + sum;
@@ -34,8 +33,8 @@
 	</script>
 	
 </head>
-<body id="dRoller" onload="loadSound();" ontouchmove="">
-   <h1>RPG Roller</h1>
+<body id="dRoller" onload="loadSound();">
+   <h1>dRoller</h1>
   	<input id="numDice" type="range" min="1" max="20" value="1" onchange="changeMe">
 	<h2 id="showDice">Dice to roll: 1</h2>
 
