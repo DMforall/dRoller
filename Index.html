@@ -24,6 +24,12 @@
 		result = result.slice(0, -2) + "\n" + "Total: " + sum;
 	 	output.innerHTML = result; 
 	}
+	function changeMe() {
+		var output = document.getElementById("showDice");
+		output.innerHTML = "Dice to roll: " + document.getElementById("numDice").value;
+		slid = Number(document.getElementById("numDice").value);
+	}
+	document.getElementById("numDice").addEventListener("input", changeMe);
 	</script>
 	
 </head>
@@ -35,12 +41,7 @@
 	<script type="text/javascript">
 	var slid = Number(document.getElementById("numDice").value);
 
-	function changeMe() {
-		var output = document.getElementById("showDice");
-		output.innerHTML = "Dice to roll: " + document.getElementById("numDice").value;
-		slid = Number(document.getElementById("numDice").value);
-	}
-	document.getElementById("numDice").addEventListener("input", changeMe);
+	
 	
 	var soundID = "myroll";
   	function loadSound () {
